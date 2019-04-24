@@ -35,6 +35,23 @@ class Manager < Employee
       employee.give_annual_raise
     end
   end
+
+  def fire_all_employees
+    # Pseudocode
+    # =========================
+    # input: @employees - a list of all employees this manager oversees
+    # output or effect: change all of this manager's employees' active status to false
+
+    # Steps
+    # 1 - retrieve all employees for this manager
+    # 2 - have access to the employees one by one
+    # 3 - fire the individual employee by changing their active status to false
+
+    @employees.length.times do |index|
+      employee = @employees[index]
+      employee.active = false
+    end
+  end
 end
 
 employee_1 = Employee.new(
@@ -59,10 +76,14 @@ manager = Manager.new(
                       employees: [employee_1, employee_2]
                       )
 
-employee_1.print_info
-employee_2.print_info
+p employee_1
+p employee_2
+p manager
 
-manager.give_all_raises
+puts "-" * 50
 
-employee_1.print_info
-employee_2.print_info
+manager.fire_all_employees
+
+p employee_1
+p employee_2
+p manager
