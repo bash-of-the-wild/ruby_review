@@ -13,31 +13,14 @@
 # puts "#{ employee_2[:first_name] } #{ employee_2[:last_name] } makes #{ employee_2[:salary] } a year."
 
 class Employee
+  attr_reader :first_name, :last_name, :salary, :active
+  attr_writer :active
+
   def initialize(input_first_name, input_last_name, input_salary, input_active)
     @first_name = input_first_name
     @last_name = input_last_name
     @salary = input_salary
     @active = input_active
-  end
-
-  def first_name
-    @first_name
-  end
-
-  def last_name
-    @last_name
-  end
-
-  def salary
-    @salary
-  end
-
-  def active
-    @active
-  end
-
-  def active=(new_value)
-    @active = new_value
   end
 
   def print_info
